@@ -1,0 +1,153 @@
+$header-primary-text-color: white;
+$primary-text-color: black;
+$primary-h-color: black;
+$a-header-text-color: black;
+$a-hover-text-color: gray;
+$header-background-color: black;
+$header-font-size: 36px;
+$header-secondary-font-size: 24px;
+$body-header-font-size: 48px;
+$primary-font-size: 20px;
+$body-bg-color: lightblue;
+$button-b-radius: 15px;
+$button-b-sec-radius: 10px;
+@use 'mixins' as styling;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $body-bg-color;
+}
+.header{
+    display: flex;
+    justify-content: center;
+
+    .header-containerdiv{
+        margin: 24px 0px;
+        padding: 24px 12px;
+        width: 80vw;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: $header-background-color;
+        .header-title{
+            h2{
+                @include styling.text-styles($header-primary-text-color, $header-font-size, bolder)
+            }
+        }
+        .header-nav{
+            .header-nav-list{
+                list-style: none;
+                text-align: center;
+                li{
+                    &:first-child, &:nth-child(2){
+                        margin-bottom: 12px;
+                    }
+                    button{
+                        @include styling.button-styles(white, $primary-text-color, $button-b-sec-radius);
+                        @include styling.text-styles($a-header-text-color, $primary-font-size, bold);
+                        border: none;
+                        width: 100%;
+                        text-decoration: none;
+                        cursor: pointer;
+                        &:hover{
+                            color: $a-hover-text-color;
+                            text-decoration: underline;
+                        }
+                    }                        
+                }
+            }
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    .main-header{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(173, 186, 230, 0.8);
+        h1{
+            @include styling.text-styles($primary-h-color, $body-header-font-size, bolder)
+        }
+    }
+    .main-text{
+        display: flex;
+        justify-content: center;
+        p{
+            @include styling.text-styles($primary-text-color, $primary-font-size, normal)
+        }
+    }
+    .main-cards{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin: 0px 24px;
+        justify-content: center;
+
+
+        .main-card{
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            background-color: rgb(214, 235, 242);
+            gap: 16px;
+            margin: 24px 0px;
+            width: 20vw;
+            min-width: 250px;
+            .main-card-image{
+                height: 80%;
+                img{
+                    border-radius: 15px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .main-card-info{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                justify-content: center;
+                white-space: nowrap;
+                .main-card-info-header{
+                    h3{
+                        @include styling.text-styles($primary-h-color, $header-secondary-font-size, bold);
+                    }
+                }
+                .main-card-info-price{
+                    p{
+                        @include styling.text-styles($primary-text-color, $primary-font-size, normal);
+                        &::first-letter{
+                            font-size: 24px;
+                            color: green;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .main-card-info-button{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 12px;
+                    button{
+                        @include styling.button-styles(red, $primary-text-color, $button-b-radius);
+                        font-size: $primary-font-size;
+                        border: none;
+                        width: fit-content;
+                        padding: 0 1vw;
+                        height: 32px;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

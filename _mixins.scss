@@ -1,0 +1,15 @@
+@mixin text-styles($text-color, $font-size, $font-weight){
+    color: $text-color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    text-align: center;
+    padding: 0px 24px;
+}
+@mixin button-styles($bg-color, $text-color, $border-radius){
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    text-align: center;
+
+}
