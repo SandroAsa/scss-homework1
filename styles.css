@@ -158,4 +158,58 @@ main .main-cards .main-card .main-card-info .main-card-info-button button {
 }
 main .main-cards .main-card .main-card-info .main-card-info-button button:hover {
   text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 25vh;
+}
+footer .footer-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .footer-container .footer-container-contacts {
+  margin: 12px;
+}
+footer .footer-container .footer-container-contacts .footer-contact p {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 24px;
+}
+footer .footer-container .footer-container-socials {
+  margin: 12px;
+}
+footer .footer-container .footer-container-socials .footer-social {
+  display: flex;
+  justify-content: center;
+}
+footer .footer-container .footer-container-socials .footer-social a {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 24px;
+  text-decoration: none;
+}
+footer .footer-container .footer-container-socials .footer-social a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 696px) {
+  .footer-container-contacts, .footer-container-socials {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 524px) {
+  .header-title, .header-nav {
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */
